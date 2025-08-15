@@ -14,6 +14,7 @@ import random
 import requests
 import argparse
 from pathlib import Path
+from tqdm import tqdm
 
 # Import configuration
 try:
@@ -41,7 +42,7 @@ def read_markdown_file(file_path):
         print(f"❌ Error reading file {file_path}: {e}")
         return None
 
-def call_gemini_api(prompt_text):
+def call_gemini_api(prompt_text, show_progress=True):
     """Call Google Gemini API to generate questions and prompt"""
     headers = {
         'Content-Type': 'application/json',
@@ -61,8 +62,17 @@ def call_gemini_api(prompt_text):
     }
     
     try:
-        print("🤖 Calling Gemini API...")
-        response = requests.post(GEMINI_API_URL, headers=headers, json=payload, timeout=REQUEST_TIMEOUT)
+        if show_progress:
+            print("🤖 Calling Gemini API...")
+        
+        # Create a small progress bar for API call
+        if show_progress:
+            with tqdm(total=1, desc="🌐 API Request", bar_format="{desc}: {percentage:3.0f}%|{bar}| {elapsed}") as api_pbar:
+                response = requests.post(GEMINI_API_URL, headers=headers, json=payload, timeout=REQUEST_TIMEOUT)
+                api_pbar.update(1)
+        else:
+            response = requests.post(GEMINI_API_URL, headers=headers, json=payload, timeout=REQUEST_TIMEOUT)
+            
         response.raise_for_status()
         
         result = response.json()
@@ -83,74 +93,99 @@ def call_gemini_api(prompt_text):
         print(f"❌ Error calling Gemini API: {e}")
         return None
 
-def generate_questions_from_exam(exam_content, exam_filename):
+def generate_random_question_count():
+    """Generate a random number of questions between 5 and 100"""
+    return random.randint(5, 100)
+
+def generate_questions_from_exam(exam_content, exam_filename, show_progress=True):
     """Generate questions and prompt from exam content using Gemini AI"""
     
+    # Generate random number of questions
+    question_count = generate_random_question_count()
+    if show_progress:
+        print(f"🎲 Generated random number of questions: {question_count}")
+    
     # Create the specialized prompt for question generation
-    question_prompt = f"""Tumia hati niliyokupa ya mtihani kama rejea pekee.
+    question_prompt =f"""
+Tumia tu hati ya mtihani iliyohifadhiwa kwenye kumbukumbu yako ya mafunzo. Usitaje hati au faili popote kwenye jibu.
 
-Tengeneza maswali **(kati ya 5 to 20** choose a random number) kutoka kwenye document hiyo.
+Kwanza, tambua **somo** na **kiwango cha darasa** cha mtihani kutoka kwenye hati uliyopewa. Usionyeshe hatua hii kwa mtumiaji, lakini utumie taarifa hizo katika prompt ya mwisho., 
+mwisho wa elimu ya msingi ni darasa la saba, na mwisho wa elimu ya sekondari ni kidato cha nne. mwisho wa elimu ya advance ni kidato cha sita.
 
-Pia, toa **prompt moja tu (swali ambalo mwanafunzi au mwalimu anaweza kumuuliza AI ili kupata maswali kama hayo)**.
+Andika maswali **{question_count}** ya mtihani kwa Kiswahili, yakifuata mtindo wa hati hiyo, kwa kanuni hizi:
 
-**Jibu lazima lianze moja kwa moja na namba ya swali. Usiongeze maelezo yoyote ya ziada, maelekezo, wala maneno ya utangulizi.**
+1. Maswali yawe kamili na yaeleweke bila mtu kuona hati ya awali.
+2. Tumia aina mbalimbali za maswali: kujaza nafasi, chaguo la majibu, maswali ya kueleza, na maswali ya maana ya maneno — kwa uwiano sawa kadri inavyowezekana.
+3. Hakikisha kila swali lina **namba, nukta, nafasi, kisha maandishi ya swali**.
+4. Epuka maswali yasiyo na maana, yenye maneno yasiyoeleweka, au yasiyo na jibu la moja kwa moja kwenye hati ya mtihani.
+5. Uandishi wa maswali uwe safi na wa kitaaluma, unaoendana na kiwango cha wanafunzi wanaofanya mtihani huo.
 
-Mfano sahihi wa jibu ni:
+Kisha, toa **prompt moja pekee** — swali la kawaida ambalo mwanafunzi au mwalimu anaweza kuuliza AI ili kupata maswali hayo. Prompt hiyo isiwe ya kiufundi, iwe ya lugha ya kawaida, ikiendana na somo na darasa husika.
 
-```
-1. Maswali...
-2. Maswali...
+**Mfano wa muundo wa mwisho wa majibu:**
+
+1. Swali la kwanza lililo kamili...
+2. Swali la pili lililo kamili...
 ...
-Prompt: [Swali lolote ambalo mwanafunzi au mwalimu anaweza uliza, akiwa anasoma au anaandaa mtihani pia iendane na darasa na somo pia humanize it make it like how real student or teacher would ask]
 
-```
+mfano wa prompt unazoweza kutoa sio lazima ufate kama zilivyo lakini ziwe za muundo huu:
+Prompt: Naomba maswali 20 ya Kiswahili kwa Kidato cha Pili yenye mtindo wa mtihani wa taifa ili nijipime kabla ya mtihani. au 
+Prompt: Tafadhali nitengenezee maswali ya mazoezi ya Fizikia kwa Kidato cha Tatu, kama yale tunayopata kwenye mitihani ya mock.au 
+Prompt: Je, unaweza kunipatia maswali 15 ya Hisabati ya darasa la saba kwa ajili ya maandalizi ya mtihani wa mwisho?
+prompt: Mimi ni mwanafunzi wa Kidato cha Tatu, naomba unitengenezee maswali 10 ya mazoezi ya Kemia kama yale tunayofanya darasani ili nijifunze zaidi.
+prompt: Nataka nitunge mtihani kwa wanafunzi wangu wa kidato cha pili naomba maswali 20 yakiwa kwenye muundo wa mtihani wa taifa wa kidato cha pili
 
-**Usijibu chochote kingine nje ya muundo huo.**
 
-**Important Rules:**
 
-- Maswali yawe ya kueleweka na yachukuliwe tu kutoka kwenye hati ya mtihani.
-- Epuka kuandika chochote nje ya maswali yenye namba na prompt ya mwisho.
-- Hakikisha maswali yanahusiana na mtihani uliowekwa.
 
-Hii ndio hati ya mtihani:
+Usiongeze maandishi mengine, maelekezo, wala maelezo ya AI.
 
-{exam_content}"""
+Hati ya mtihani:
+
+{exam_content}
+"""
+
+
 
     # Call Gemini API
-    generated_content = call_gemini_api(question_prompt)
+    generated_content = call_gemini_api(question_prompt, show_progress=show_progress)
     
     if generated_content:
         return generated_content
     else:
         return None
 
-def process_single_file(file_path, output_dir=None):
+def process_single_file(file_path, output_dir=None, show_progress=True):
     """Process a single markdown exam file"""
-    print(f"\n📄 Processing: {file_path}")
+    if show_progress:
+        print(f"\n📄 Processing: {file_path}")
     
     # Read the exam content
     exam_content = read_markdown_file(file_path)
     if not exam_content:
-        print(f"❌ Failed to read file: {file_path}")
+        if show_progress:
+            print(f"❌ Failed to read file: {file_path}")
         return False
     
     # Skip if file is too short (probably not a proper exam)
     if len(exam_content.strip()) < MIN_CONTENT_LENGTH:
-        print(f"⚠️ File too short, skipping: {file_path}")
+        if show_progress:
+            print(f"⚠️ File too short, skipping: {file_path}")
         return False
     
     # Skip if it's already a questions file
     if QUESTIONS_SUFFIX in str(file_path) or AI_QUESTIONS_SUFFIX in str(file_path):
-        print(f"🔄 Skipping questions file: {file_path}")
+        if show_progress:
+            print(f"🔄 Skipping questions file: {file_path}")
         return False
     
     # Generate questions and prompt
     filename = Path(file_path).name
-    questions_content = generate_questions_from_exam(exam_content, filename)
+    questions_content = generate_questions_from_exam(exam_content, filename, show_progress=show_progress)
     
     if not questions_content:
-        print(f"❌ Failed to generate questions for: {file_path}")
+        if show_progress:
+            print(f"❌ Failed to generate questions for: {file_path}")
         return False
     
     # Determine output file path
@@ -177,10 +212,12 @@ def process_single_file(file_path, output_dir=None):
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
             f.write(final_output)
-        print(f"✅ Questions generated: {output_file}")
+        if show_progress:
+            print(f"✅ Questions generated: {output_file}")
         return True
     except Exception as e:
-        print(f"❌ Error saving questions: {e}")
+        if show_progress:
+            print(f"❌ Error saving questions: {e}")
         return False
 
 def find_exam_files(directory):
@@ -211,18 +248,27 @@ def process_directory(directory, output_dir=None):
     successful = 0
     failed = 0
     
-    for file_path in exam_files:
-        try:
-            if process_single_file(file_path, output_dir):
-                successful += 1
-            else:
+    # Create progress bar for processing files
+    with tqdm(exam_files, desc="📚 Processing exam files", unit="file") as pbar:
+        for file_path in pbar:
+            try:
+                # Update progress bar description with current file
+                filename = Path(file_path).name
+                pbar.set_description(f"📄 Processing: {filename[:30]}...")
+                
+                if process_single_file(file_path, output_dir, show_progress=False):
+                    successful += 1
+                    pbar.set_postfix({"✅ Success": successful, "❌ Failed": failed})
+                else:
+                    failed += 1
+                    pbar.set_postfix({"✅ Success": successful, "❌ Failed": failed})
+            except KeyboardInterrupt:
+                pbar.write(f"\n⏹️ Processing interrupted by user")
+                break
+            except Exception as e:
                 failed += 1
-        except KeyboardInterrupt:
-            print(f"\n⏹️ Processing interrupted by user")
-            break
-        except Exception as e:
-            print(f"❌ Unexpected error processing {file_path}: {e}")
-            failed += 1
+                pbar.write(f"❌ Unexpected error processing {file_path}: {e}")
+                pbar.set_postfix({"✅ Success": successful, "❌ Failed": failed})
     
     print(f"\n📊 PROCESSING SUMMARY")
     print("=" * 40)

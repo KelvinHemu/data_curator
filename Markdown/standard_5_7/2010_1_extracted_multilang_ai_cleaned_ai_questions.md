@@ -1,0 +1,113 @@
+# Maswali ya Mtihani ya AI
+*Maswali yametengenezwa na AI kutoka kwa mtihani: 2010_1_extracted_multilang_ai_cleaned.md*
+
+---
+
+1.  7298 + 6032 =
+2.  16927 - 7364 =
+3.  49 x 65 =
+4.  1308 ÷ 18 =
+5.  8/24 =
+6.  4.98 + 2.062 + 0.3 =
+7.  0.4444 - 0.2778 =
+8.  8.06 x 9.28 =
+9.  3.053 ÷ 11.32 =
+10. Badilisha 0.75 kuwa sehemu rahisi.
+11. Badilisha 4/5 kuwa desimali.
+12. Geuza 3/8 kuwa asilimia.
+13. Kuna dakika ngapi kati ya saa 10.45 a.m. na 12.35 p.m.?
+14. Tafuta mraba wa 6 1/2. (Andika jibu kama namba mchanganyiko).
+15. Zidisha kilo 7 na gramu 60 kwa 27.
+16. Tafuta L.C.M (Kigawo Kidogo cha Pamoja) cha 48 na 100.
+17. Tafuta H.C.F (Kizio Kikubwa cha Pamoja) cha 50 na 75.
+18. Kuna namba ngapi zisizo za kawaida kati ya 3 na 31 ambazo zinagawanyika kwa 4?
+19. Andika namba inayofuata katika mfuatano huu: 4, 3, 1, -2, -6, ----.
+20. Kama a = 5/6 na b = 4/5, thamani ya (4a)/b ni nini? (andika jibu lako kama namba mchanganyiko).
+21. Tafuta thamani ya x ikiwa 4/5 + 1/4 = x/10.
+22. Thamani ya C ni nini ikiwa 5:C = 3:7?
+23. Rahisisha usemi ufuatao: (y/3) + (y/4).
+24. Tafuta kipenyo cha duara ambalo mzingo wake ni 8.99 m, (tumia π = 3.14).
+25. Tafuta thamani ya x katika mchoro ufuatao:
+
+    ```
+    8x
+    3x
+    ```
+26. Kama wastani wa 30, 31, 23, 37, 49 na z ni 31. Thamani ya z ni nini?
+27. Gari linasafiri kwa kasi ya 120,000 m kwa saa. Itachukua dakika ngapi kusafiri umbali wa 90,000 m?
+28. Tafuta ukubwa wa angle XYZ katika mchoro ufuatao:
+
+    ```
+    10m 6m
+    ```
+29. Silinda ina urefu wa 30 m na kipenyo cha 6 m. Tafuta eneo lake lote la uso ikiwa imefungwa pande zote mbili, (tumia π = 3.14).
+30. Bomba lina urefu wa 15 cm. Kama ujazo wake ni 9240 cm³, tafuta kipenyo cha bomba, (tumia π = 22/7).
+31. Badilisha nambari hii ya Kirumi DCXIV kuwa nambari za kawaida.
+32. Tafuta jumla ya nyuzi za pembe za ndani za poligoni yenye pande tano.
+33. Eneo la msambamba ni 160 cm². Tafuta msingi wake ikiwa urefu wake ni 40 cm.
+34. Tafuta kiasi cha mafuta ya taa katika lita zinazohitajika kujaza tangi la mchemraba lenye urefu wa 160 cm, (tumia 1 lita = 1,000 cm³).
+35. Jumla ya 2568 na 3421 ni sawa na ....................
+36. Tofauti kati ya 9876 na 5432 ni ....................
+37. Zao la 123 na 45 ni ....................
+38. Gawio la 6789 kwa 23 ni ....................
+39. Sehemu 3/9 ni sawa na ....................
+40. Jumla ya 5.67 na 2.33 ni ....................
+41. Tofauti kati ya 1.234 na 0.567 ni ....................
+42. Zao la 2.5 na 3.5 ni ....................
+43. Gawio la 10.0 kwa 2.5 ni ....................
+44. Badilisha 0.8 kuwa sehemu rahisi ....................
+45. Badilisha 7/8 kuwa desimali ....................
+46. Badilisha 1/4 kuwa asilimia ....................
+47. Kuna dakika ngapi kati ya 8:00 asubuhi na 12:00 mchana? ....................
+48. Mraba wa 7 1/2 ni ....................
+49. Kilo 8 na gramu 70 zidisha kwa 30 ni ....................
+50. Kigawo kidogo cha pamoja cha 12 na 18 ni ....................
+51. Kizio kikubwa cha pamoja cha 24 na 36 ni ....................
+52. Kuna namba ngapi kati ya 10 na 50 zinazogawanyika kwa 5? ....................
+53. Namba inayofuata katika mfuatano 1, 4, 9, 16, ....................
+54. Kama x = 2/3 na y = 1/2, basi thamani ya (2x)/y ni ....................
+55. Kama 2/5 + 1/10 = x/10, basi x ni ....................
+56. Kama 3:A = 1:4, basi A ni ....................
+57. Rahisisha (a/4) + (a/8) ....................
+58. Mzingo wa duara ni 12.56 cm, kipenyo chake ni ....................
+59. Jumla ya pembe za ndani za pembetatu ni ....................
+60. Wastani wa 10, 20, 30, na 40 ni ....................
+61. Gari linasafiri kilomita 60 kwa saa, itachukua muda gani kusafiri kilomita 120? ....................
+62. Jina la pembe yenye nyuzi 90 ni ....................
+63. Eneo la silinda yenye urefu wa sm 10 na kipenyo cha sm 4 ni ....................
+64. Ujazo wa mchemraba wenye upande wa sm 5 ni ....................
+65. DCXX kwa namba za kawaida ni ....................
+66. Jumla ya pembe za ndani za mstatili ni ....................
+67. Eneo la msambamba wenye msingi wa sm 10 na urefu wa sm 5 ni ....................
+68. Lita 1 ni sawa na sentimita za ujazo ngapi? ....................
+69. Andika maana ya neno "kipenyo" katika hisabati.
+70. Eleza tofauti kati ya "eneo" na "ujazo".
+71. Andika kanuni ya kutafuta eneo la duara.
+72. Eleza dhana ya "wastani" kwa maneno yako mwenyewe.
+73. Toa mfano wa matumizi ya hisabati katika maisha ya kila siku.
+74. Andika neno "asilimia" kwa alama.
+75. Andika jina la umbo lenye pande tano.
+76. Eleza maana ya "namba tasa".
+77. Andika mfumo wa vipimo vya SI.
+78. Tafuta eneo la mstatili wenye urefu wa 8cm na upana wa 5cm.
+79. Tatua: 2x + 5 = 11
+80. Rahisisha: 3a + 4b - a + 2b
+81. Andika namba 100 kwa namba za Kirumi.
+82. Tafuta ujazo wa sanduku lenye urefu wa 6cm, upana wa 4cm na kimo cha 3cm.
+83. Tafuta mzingo wa mraba wenye upande wa 7cm.
+84. Badilisha 25% kuwa sehemu.
+85. Tafuta thamani ya x kama 5x = 35
+86. Andika maneno matatu yanayohusiana na mduara.
+87. Tafuta HCF ya 12 na 18.
+88. Tafuta LCM ya 6 na 8.
+89. Eleza maana ya msambamba.
+90. Tafuta eneo la pembetatu yenye msingi wa 10cm na urefu wa 6cm.
+91. Andika namba inayo fuata: 2,4,6,8,?
+92. Tafuta ujazo wa mchemraba wenye urefu wa 4cm.
+93. Tafuta eneo la duara lenye radius ya 7cm. (Tumia π = 22/7).
+94. Eleza kwa ufupi umuhimu wa hisabati katika maisha yetu ya kila siku.
+
+Prompt: Naomba maswali 100 ya Hisabati kwa Darasa la Saba, yakiwa na mchanganyiko wa kujaza nafasi, chaguo la majibu, na maswali ya maelezo, kama yanavyoulizwa kwenye mtihani wa kumaliza shule ya msingi.
+
+---
+*Maswali haya yametengenezwa kwa kutumia Google Gemini AI kutoka kwenye mtihani halisi.*
