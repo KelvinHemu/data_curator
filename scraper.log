@@ -56,3 +56,8 @@
 2025-08-22 11:56:21,326 - INFO - Successfully scraped https://httpbin.org/html
 2025-08-22 11:56:21,327 - INFO - Skipping https://httpbin.org/html: missing required keywords
 2025-08-22 11:56:21,327 - WARNING - No content was successfully scraped
+2025-08-22 12:53:32,927 - INFO - Scraping 1 unique URLs
+2025-08-22 12:53:32,931 - INFO - Fetching content from: https://learninghubtz.co.tz/primary-exams-series-std7.php?sub=c2F5YW5zaQ%3D%3D
+2025-08-22 12:53:35,402 - INFO - Successfully scraped https://learninghubtz.co.tz/primary-exams-series-std7.php?sub=c2F5YW5zaQ%3D%3D
+2025-08-22 12:53:35,458 - INFO - Saved 1 articles to scraped_content
+2025-08-22 12:53:35,458 - INFO - Successfully scraped 1 articles
