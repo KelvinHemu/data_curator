@@ -1,0 +1,39 @@
+2025-08-22 11:31:36,742 - INFO - Processing URL 1/2: https://httpbin.org/html
+2025-08-22 11:31:36,742 - INFO - Fetching content from: https://httpbin.org/html
+2025-08-22 11:31:38,729 - INFO - Successfully scraped https://httpbin.org/html
+2025-08-22 11:31:39,729 - INFO - Processing URL 2/2: https://example.com
+2025-08-22 11:31:39,730 - INFO - Fetching content from: https://example.com
+2025-08-22 11:32:10,829 - INFO - Successfully scraped https://example.com
+2025-08-22 11:32:10,829 - INFO - Saved 2 articles to basic_scraped.json
+2025-08-22 11:32:10,830 - INFO - Saved 2 articles to basic_scraped
+2025-08-22 11:32:10,831 - INFO - Fetching content from: https://httpbin.org/html
+2025-08-22 11:32:12,092 - INFO - Successfully scraped https://httpbin.org/html
+2025-08-22 11:32:41,405 - INFO - Processing URL 1/2: https://httpbin.org/html
+2025-08-22 11:32:41,405 - INFO - Fetching content from: https://httpbin.org/html
+2025-08-22 11:32:42,631 - INFO - Successfully scraped https://httpbin.org/html
+2025-08-22 11:32:43,631 - INFO - Processing URL 2/2: https://example.com
+2025-08-22 11:32:43,632 - INFO - Fetching content from: https://example.com
+2025-08-22 11:32:44,625 - INFO - Successfully scraped https://example.com
+2025-08-22 11:32:44,625 - INFO - Saved 2 articles to basic_scraped.json
+2025-08-22 11:32:44,626 - INFO - Saved 2 articles to basic_scraped
+2025-08-22 11:32:44,626 - INFO - Fetching content from: https://httpbin.org/html
+2025-08-22 11:32:46,641 - INFO - Successfully scraped https://httpbin.org/html
+2025-08-22 11:32:46,641 - INFO - Skipping https://httpbin.org/html: missing required keywords
+2025-08-22 11:32:46,641 - INFO - Fetching content from: https://example.com
+2025-08-22 11:33:17,819 - INFO - Successfully scraped https://example.com
+2025-08-22 11:33:17,819 - INFO - Skipping https://example.com: content too short
+2025-08-22 11:33:17,820 - INFO - Fetching content from: https://example.com/sitemap.xml
+2025-08-22 11:34:48,715 - ERROR - Error fetching https://example.com/sitemap.xml: HTTPSConnectionPool(host='example.com', port=443): Read timed out. (read timeout=30)
+2025-08-22 11:34:48,789 - INFO - Fetching content from: https://example.com/sitemap_index.xml
+2025-08-22 11:34:50,616 - ERROR - Error fetching https://example.com/sitemap_index.xml: 404 Client Error: Not Found for url: https://example.com/sitemap_index.xml
+2025-08-22 11:34:50,617 - INFO - Fetching content from: https://example.com/robots.txt
+2025-08-22 11:34:50,997 - ERROR - Error fetching https://example.com/robots.txt: 404 Client Error: Not Found for url: https://example.com/robots.txt
+2025-08-22 11:34:50,998 - INFO - Fetching content from: https://example.com
+2025-08-22 11:34:52,857 - INFO - Fetching content from: https://httpbin.org/html
+2025-08-22 11:34:54,031 - INFO - Successfully scraped https://httpbin.org/html
+2025-08-22 11:34:54,061 - INFO - Saved 1 articles to single_scrape_2025-08-22.json
+2025-08-22 11:35:46,555 - INFO - Scraping 1 unique URLs
+2025-08-22 11:35:46,559 - INFO - Fetching content from: https://httpbin.org/html
+2025-08-22 11:35:47,819 - INFO - Successfully scraped https://httpbin.org/html
+2025-08-22 11:35:47,823 - INFO - Saved 1 articles to cli_test.json
+2025-08-22 11:35:47,824 - INFO - Successfully scraped 1 articles
